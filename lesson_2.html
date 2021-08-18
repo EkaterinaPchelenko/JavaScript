@@ -1,0 +1,172 @@
+<script type="text/javascript">
+	// task_1
+
+	/*var a = 1, b = 1, c, d;
+	c = ++a; alert(c);           // Получаем 2. В данном случае мы сначала увеличиваем переменную a на 1 (т.е. а = 2),
+								 // затем присваиваем значение переменной с, и потом выводится значение переменной с.
+	d = b++; alert(d);           // Получаем 1. Здесь мы сначала присваиваем переменной d значение пременной b (т.е. d = 1),
+								 // и только после этого увеличиваем переменную b на единицу (т.е. теперь b = 2),
+								 // затем выводим значение d (т.е. единицу).
+	c = (2+ ++a); alert(c);      // Получаем 5. Сначала мы увеличиваем значение переменной а (а = а + 1 = 3),
+	                             // дальше прибавляем к переменной а двойку (а + 2 = 3 + 2 = 5),
+								 // потом присваиваем полученное значение переменной с, и затем выводим значение переменной с.
+	d = (2+ b++); alert(d);      // Получаем 4. Сначала мы производим операцию (2 + b = 2 + 2 = 4), затем присваиваем полученное значение
+								 // переменной d и увеличиваем переменную b на один (т.е. теперь b = 3).
+								 // Ну а дальше выводим переменную а, которая у нас равна 3, и переменную b, которая тоже равна 3.
+	alert(a);                    // Получаем 3.
+	alert(b);                    // Получаем 3.
+	*/
+
+	// task_2
+
+	var a = 2;
+	var x = 1 + (a *= 2); // Присваиваем переменной а её уже имеющееся значение, умноженное на 2 (а = а * 2 = 2 * 2 = 4)
+						  // т.е. а = 4, затем прибавляем к а единицу (1 + а = 1 + 4 = 5) и полученное значение присваиваем переменной x.
+						  // т.е. x = 5
+
+	// task_3
+
+	alert('task 3');
+	a = +prompt('Введите числовое значение переменной a: ');
+	b = +prompt('Введите числовое значение переменной b: ');
+
+	if ((a >= 0) && (b >= 0)){
+		alert(`Разность переменных равна: ${a - b}`);
+	}
+	else if ((a < 0) && (b < 0)){
+		alert(`Произведение переменных равно: ${a * b}`);
+	}
+	else if (((a < 0) && (b >= 0)) || ((a >= 0) && (b < 0))){
+		alert(`Сумма переменных равна: ${a + b}`) ;
+	} else {
+		alert('Операция для переменных не определена');
+	}
+
+	// task_4
+
+	alert('task 4');
+	number = +prompt('Введите числовое значение от 0 до 15: ');
+		switch(number){
+			case 0:
+			alert(0);
+			case 1:
+			alert(1);
+			case 2:
+			alert(2);
+			case 3:
+			alert(3);
+			case 4:
+			alert(4);
+			case 5:
+			alert(5);
+			case 6:
+			alert(6);
+			case 7:
+			alert(7);
+			case 8:
+			alert(8);
+			case 9:
+			alert(9);
+			case 10:
+			alert(10);
+			case 11:
+			alert(11);
+			case 12:
+			alert(12);
+			case 13:
+			alert(13);
+			case 14:
+			alert(14);
+			case 15:
+			alert(15);
+		}
+
+	// task_5
+
+	alert('task 5')
+
+	function summOper(fstVal, sndVal){
+		return `Сумма ${fstVal} и ${sndVal} равна:\n ${fstVal + sndVal}`
+	}
+
+	function diffOper(fstVal, sndVal){
+		return `Разность ${fstVal} и ${sndVal} равна:\n ${fstVal - sndVal}`
+	}
+
+	function multOper(fstVal, sndVal){
+		return `Произведение ${fstVal} и ${sndVal} равно:\n ${fstVal * sndVal}`
+	}
+
+	function quotientOper(fstVal, sndVal){
+		if (sndVal != 0){
+			return `Частное ${fstVal} и ${sndVal} равно:\n ${fstVal / sndVal}`
+		} else {
+			return 'Делить на ноль нельзя'
+		}
+	}
+
+	alert(summOper(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)))
+	alert(diffOper(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)))
+	alert(multOper(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)))
+	alert(quotientOper(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)))
+
+	// task_6
+
+	alert('task 6')
+
+	function mathOperation(arg1, arg2, operation){
+		var myStr
+		if (operation === 'сумма'){
+			myStr = summOper(arg1, arg2)
+		} else if (operation == 'разность'){
+			myStr = diffOper(arg1, arg2)
+		} else if (operation == 'произведение'){
+			myStr = multOper(arg1, arg2)
+		} else if (operation == 'частное'){
+			myStr = quotientOper(arg1, arg2)
+		} else {
+			myStr = 'Операция введена не верно!'
+		}
+		return myStr
+	}
+
+	argument1 = +prompt('Введите первое число: ')
+	argument2 = +prompt('Введите второеое число: ')
+	oper = prompt('Ведите название операции: ')
+
+	alert(mathOperation(argument1, argument2, oper))
+
+
+	// task 7
+	/*
+	alert(null < 0);  // Выводит False. Сравнения преобразуют null к числовому значению 0, поэтому (null < 0)
+					  // интерпритируется как (0 < 0), что является в свою очередь ложью
+	alert(null > 0);  // Выводит False. Аналогично предыдущему примеру.
+
+	alert(null == 0); // Выводит False. При нестрогом равенстве null не преобразуется к 0, поэтому null == 0 - ложь.
+
+	alert(null >= 0); // Так как в выражении присутствует сравнение, то null автоматически преобразуется к 0,
+					  // конечно же null не больше нуля, однако тут вступает в силу нестрогое равенство, и так как
+					  // null уже преоюразовано к 0, то получаем null == 0, что и делает выражение null >= 0 истиной.
+	alert(null <= 0); // Выводит True по аналогии с предыдущим примером.
+	alert(null != 0); // Вы водит True, что совершенно логично, ведь null не преобразуется к 0, от чего выражение null != 0 - ложь.
+	*/
+	// task 8
+
+	alert('task 8')
+	function power(val, pow){
+		if (pow == 1){
+			return val
+		} else if (pow == 0){
+			return 1
+		} else {
+			pow -= 1
+			return val * power(val, pow)
+		}
+	} 
+
+	val = +prompt('Введите число: ')
+	pow = +prompt('Введите степень: ')
+	alert(`${val} в степени ${pow} равно ${power(val, pow)}.`)
+
+</script>
