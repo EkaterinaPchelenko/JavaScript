@@ -1,0 +1,19 @@
+<script type="text/javascript">
+
+	var myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+	var i = 1
+	while (i != 100){
+		var myCounter = 0
+		for (var j of myArray){
+			if (i % j === 0) {myCounter++}
+		}
+
+		if (i <= 9){
+			if (myCounter <= 2) alert(i)
+		} else {
+			if (myCounter <= 1) alert(i)
+		}
+		i++
+	}
+
+</script>
