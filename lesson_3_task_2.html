@@ -1,0 +1,14 @@
+<script type="text/javascript">
+
+	let basket = [['Видеокарта', 3, 43640], ['Процессор', 7, 5450], ['Мат.плата', 1, 11000]]
+	
+	function countBasketPrice(basket){
+		let total = 0
+		for (let i = 0; i < basket.length; i++){
+			total += (basket[i][1] * basket[i][2])
+		}
+		return total
+	}
+
+	alert(`Итог: ${countBasketPrice(basket)}.`)
+</script>
